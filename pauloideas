@@ -1,0 +1,49 @@
+
+
+--->>>>> DONT SAVE TWO PRODUCTS WITH THE SAME CODE
+
+- CREATE NEW PRODUCT OR OPTION IF THE PRODUCT IN DEVOLUTION DON'T EXIST
+
+- adicionar opcao de edicao dos valores da venda na edição
+    - criar inputs com edicao limitada até o usuario clicar na edição da janela e poder editar tudo
+        - editar obs
+        - editar valor total
+        - editar vendedor?
+        - editar formapag
+        - editar valor de cada produto
+        - editar quantidade de cada produto
+            - vou ter q salvar o id de cada na tabela pra acessar no database
+        - editar opcao?
+        - adicionar opção de excluir um produto e trocar por outro (fazer uma nova venda?)
+            - quando for trocar, adicionar o produto por código?
+        
+        ---------->>>>> FAZER UMA DEVOLUÇÃO E ADICIONAR UMA VENDA NOVA AO INVES DE EDITAR????
+            - DEVOLVER O PRODUTO PRO ESTOQUE AO FAZER UMA DEVOLUÇÃO
+            - add opcao pra devolver e selecionar os produtos a manter na venda?
+
+- mudar layout do histórico e dos formularios de adicao de produts e categorias e tals
+- mais informações úteis pra categorias e informações
+
+---->>>> PEDIR AUTORIZAÇÃO AO ENTRAR NA JANELA DE ADMIN
+- permitir o acesso ao estoque só pela janela de admin?
+
+- add calculator
+
+DEVOLUÇÕES
+    - adicionar opcao de devolução
+    - aumentar do database caso devolucao
+    - NÃO EXCLUIR A VENDA, SÓ SETAR O STATUS DELA COMO 'DEVOLVIDA'
+    - novo status de devolvido
+    - pode adicionar um input de código da venda, tipo recibo, NF, ou sei lá oq q seja importante pra procurar essa venda depois
+
+
+-->>>>> ADD CUSTOMER???
+
+-->>>> https://spos.tecdiary.net/pos
+    - add option to discount on confirmation screen
+    ---->>>> ADD DISCOUNT ON CONFIRMATION SELL
+
+-->>>>> ADD OPTION TO PAY IN 2 ways
+--->>>> BACKUP DO DATABASE AND SYNC OFFLINE
+
+- add image to category?

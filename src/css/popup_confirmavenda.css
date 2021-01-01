@@ -1,0 +1,269 @@
+/* SCREEN AND POPUP GENERAL */
+#screen_confirmavenda{
+    width:100%;
+    height:100%;
+    opacity:.95;
+    top:30px;
+    left:0;
+    position:fixed;
+    background-color:#313131;
+    overflow:auto;
+}
+
+
+#popupconfirmavenda {
+    position:absolute;
+    left:50%;
+    height: 600px;
+    top:5%;
+    margin-left:-350px;
+    border-radius:20px 20px 20px 20px;
+    font-family:raleway;
+    background:linear-gradient(90deg, #eeeeee27 0%,#e5eeeeb9 2%, #e5eeeed3 50%, #e5eeeeb9 98%,#dfdfdf28 100%);
+
+    animation: openpopupanimation .2s ease-in-out;
+}
+
+
+
+.closepopupconfirmavenda{
+opacity: 0.8;
+position:absolute;
+height: 30px;
+right:-14px;
+top:-14px;
+cursor:pointer;
+transition: all 0.5s;
+}
+
+.closepopupconfirmavenda:hover{
+    opacity: 1;
+    transform: scale(1.3) rotate(180deg);
+    transition: all 0.5s;
+}
+
+/* ELEMENTS ON FORM */
+#form_confirmavenda {
+    height: 90%;
+    width: 700px;
+    padding:25px;
+    border-radius:10px;
+    font-family:'Raleway';
+}
+
+
+#form_confirmavenda h2 {
+padding:0;
+text-align:center;
+}
+
+#form_confirmavenda hr {
+border:0;
+border-top:1px solid rgb(150, 150, 150)
+}
+
+#form_confirmavenda div1 {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+#confirmavenda_status  {
+    font-family: raleway;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 50px;
+}
+
+#confirmavenda_vendedor{
+    font-family: raleway;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-left: 30px;
+}
+
+#form_confirmavenda div {
+    width: 100%;
+    display: flex;
+}
+
+
+
+#confirmavenda_obs{
+    margin-top: 10px;
+    width: 40%;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding-left: 15px;
+    font-family: raleway;
+    font-size: large;
+}
+
+#confirmavenda_selectformapag{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 35%;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    text-align: center;
+    font-family: raleway;
+    font-size: large;
+}
+
+#confirmavenda_valortotal{
+    margin-top: 10px;
+    margin-left: 30px;
+    width: 25%;
+    height: 40px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    background: white;
+    text-align: center;
+    padding-top: 10px;
+    font-family: raleway;
+    font-size: large;
+}
+
+/* OUTRAS FUNÇÕES*/
+
+#table_confirmavenda{
+    width: 650px;
+    height: auto;
+    max-height: 250px;
+    border-collapse: collapse;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+}
+
+#table_confirmavenda th{
+    font-size: 1.3rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-family: raleway-light;
+    border: 2px solid rgba(84, 156, 11, 0);
+    background: #002468;
+    border-radius:10px 10px 0 0
+}
+
+#table_confirmavenda td{
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid rgba(6, 12, 0, 0.432);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#table_confirmavenda td img{
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    margin-left: 10px;
+}
+
+#table_confirmavenda tr:nth-child(even) {
+    background-color: #00063d;
+}
+
+#table_confirmavenda tr:nth-child(odd) {
+    background-color: #002c3d;
+}
+
+#table_confirmavenda tr{
+    transition: 0.5s;
+}
+
+#table_confirmavenda tr:hover {
+    background-color: #330050;
+    transition: 0.5s;
+}
+
+#table_confirmavenda::-webkit-scrollbar {
+    cursor: pointer;
+    width: 12px;
+    background: transparent;
+}
+  
+#table_confirmavenda::-webkit-scrollbar-thumb {
+    background:  linear-gradient(180deg, #083b28d3 0%, #0a3f29b6 50%, #083b28d3 100%);
+    border-radius: 10px;
+}
+
+
+
+#submit_confirmavenda {
+margin-top: 20px;
+padding: 20px;
+text-decoration:none;
+width:auto;
+text-align:center;
+display:block;
+background: linear-gradient(90deg,rgb(199, 196, 3) 0%,rgb(94, 92, 0) 50%, rgb(181, 212, 0) 100%);
+color:#fff;
+font-weight: 20;
+border:2px solid #d4aa00;
+font-size:20px;
+cursor:pointer;
+border-radius:8px;
+transition: 0.5s;
+}
+
+#submit_confirmavenda:hover{
+    background: linear-gradient(90deg,rgb(199, 196, 3) 0%,rgb(199, 196, 1) 50%, rgb(181, 212, 0) 100%);
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+
+#btn_excluirvenda{
+    float: right;
+    display: none !important;
+    height:35px;
+    width: 35px;
+    background-image: url('../img/trash-can.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor:pointer;
+    opacity: .7;
+    transition: 0.5s;
+}
+    
+#btn_excluirvenda:hover{
+    transition: 0.5s;
+    opacity: 1;
+    transform: scale(1.3);
+}
+
+#btn_devolucao{
+    float: right;
+    height:35px;
+    width: 35px;
+    background-image: url('../img/icon-devolucao.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor:pointer;
+    opacity: .7;
+    transition: 0.5s;
+}
+
+#btn_devolucao:hover{
+    transition: 0.5s;
+    opacity: 1;
+    transform: scale(1.3);
+}
+    
+    
+
+
+    
+    
+    

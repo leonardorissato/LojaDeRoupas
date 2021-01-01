@@ -1,0 +1,283 @@
+.adminpage{
+  padding: 10px;
+  height: 0px;
+}
+
+.column-profit {
+  float: left;
+  width: 50%;
+  padding:  10px;
+}
+
+
+.card-profit{
+  box-shadow: 10px 8px 8px 0px rgba(0, 255, 0, 0.062);
+  margin: 10px;
+  text-align: center;
+  background: linear-gradient(90deg, #0a0824d5 0%, #0b1133b6 50%, #0a0824d5 100%);
+  color: white;
+  min-height: 300px;
+  min-width: 280px;
+  max-height: 500px;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.card-profit h{
+  font-size: 2rem;
+}
+
+
+
+.resumo-final{
+  background: rgba(148, 25, 25, 0);
+  width: 100%;
+}
+
+.resumo-final button{
+  float: left;
+  margin-left: 2vw;
+  width: 15vw;
+  height: 40px;
+  font-size: 1.5vw;
+  font-weight: bold;
+  font-family: raleway;
+  border-radius: 8px;
+  padding-bottom: 3vw;
+  padding-top: 1vw;
+}
+
+.resumo-final label{
+  float: right;
+  padding-top: 20px;
+  padding-right: 20px;
+  font-size: 2vw;
+  font-weight: 300;
+  font-family: raleway;
+}
+
+.table-lucro{
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  height: 100%;
+  display: block;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  table-layout: fixed;
+  cursor: pointer;
+}
+
+.table-lucro th{
+  font-size: 1.2vw;
+  text-align: center;
+  font-family:  raleway-light;
+  text-emphasis-style: bold;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 2px solid rgba(84, 156, 11, 0);
+  background: rgba(33, 11, 156, 0.164);
+  padding: 10px;
+  width: 1%;
+}
+
+.table-lucro td{
+  font-size: 1.1vw;
+  text-align: center;
+  font-family:  raleway-light;
+  padding: 8px 3px;
+  border: 1px solid rgba(77, 143, 11, 0.212);
+}
+
+
+.table-lucro tr{
+  transition: 0.3s;
+}
+
+.table-lucro tr:nth-child(even) {
+  background-color: #068f113a;
+}
+
+.table-lucro tr:hover {
+  background-color: #00c3ff5e;
+  transition: 0.5s;
+  transform: scale(1.03);
+}
+
+
+
+
+
+.table-gasto{
+  color: white;
+  padding: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  height: 100%;
+  display: block;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  table-layout: fixed;
+  cursor: pointer;
+}
+
+.table-gasto th{
+  font-size: 1.2vw;
+  text-align: center;
+  font-family:  raleway-light;
+  text-emphasis-style: bold;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border: 2px solid rgba(84, 156, 11, 0);
+  background: rgba(33, 11, 156, 0.164);
+  padding: 10px;
+  width: 1%;
+}
+
+.table-gasto td{
+  font-size: 1.1vw;
+  text-align: center;
+  font-family:  raleway-light;
+  padding: 8px 3px;
+  border: 1px solid rgba(143, 11, 11, 0.253);
+}
+
+.table-gasto tr {
+  transition: 0.3s;
+}
+
+.table-gasto tr:nth-child(even) {
+  background-color: #8f06064b;
+}
+
+.table-gasto tr:hover {
+  background-color: #00c3ff5e;
+  transition: 0.5s;
+  transform: scale(1.03);
+}
+
+
+
+
+.btn-add-lucro{
+  margin-top: 20px;
+  padding: 10px;
+  text-decoration:none;
+  width:35%;
+  text-align:center;
+  height: 30px;
+  background:linear-gradient(90deg, #497700d5 0%, #3c5a04b6 50%, #a9bb04d5 100%);
+  color:rgb(214, 190, 190);
+  border:1px solid #FFCB00;
+  font-size:20px;
+  cursor:pointer;
+  border-radius:8px;
+  align-content: center;
+  transition: all 0.5s;
+}
+
+.btn-add-lucro:hover{
+  background:linear-gradient(90deg, #5d9700e3 0%, #5a8a02b6 50%, #c1cf3dd5 100%);
+  transition: all 1s;
+  transform: scale(1.15);
+}
+
+.top-profit{
+  display: flex;
+  float: inline-end;
+}
+
+.top-profit input{
+  cursor: pointer;
+  width: 200px;
+  margin-left: 20px;
+  background:linear-gradient(90deg, #18023ad5 0%, #1e045ab6 50%, #09044ed5 100%);
+  color: wheat;
+  border-radius: 10px;
+  font-family: raleway;
+  text-align: center;
+  border: rgba(22, 0, 73, 0.288) solid 1px;
+  outline: none;
+  box-shadow: none;
+}
+
+.top-profit button{
+  background:linear-gradient(90deg, #18023ad5 0%, #1e045ab6 50%, #09044ed5 100%);
+  color:wheat;
+  border:1px solid #09012e;
+  border-radius: 15px;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size:15px;
+  cursor:pointer;
+  height: 40px;
+  transition: all 0.3s;
+}
+
+.top-profit button:hover{
+  background:linear-gradient(90deg, #a30366d5 0%, #8a0678b6 50%, #db078ad5 100%);
+  transform: scale(1.05);
+  transition: all 1s;
+}
+
+
+
+.bottom-profit{
+  box-shadow: 10px 8px 8px 0px rgba(0, 255, 0, 0.062);
+  margin: 10px;
+
+  width: 100%;
+  height: 250px;
+  display: flex;
+}
+
+.graphprofit{
+  width: 35%;
+  background: linear-gradient(90deg, #0a0824d5 0%, #0b1133b6 50%, #0a0824d5 100%);
+}
+
+.profitgeral{
+  width: 30%;
+  display: block;
+  background: linear-gradient(90deg, #0a0824d5 0%, #0b1133b6 50%, #0a0824d5 100%);
+  border-left: solid 1px rgba(0, 174, 255, 0.295);
+  border-right: solid 1px rgba(0, 174, 255, 0.397);
+}
+
+.profitgeral div{
+  width: 100%;
+  align-content: center;
+}
+
+.profitgeral h3{
+  width: 100%;
+  text-align: center;
+  font-size: 2vw;
+  font-family: raleway;
+  color: rgba(255, 255, 255, 0.555);
+}
+
+.profitgeral img{
+  width: 25%;
+  height: 25%;
+  margin-left: 37%;
+  margin-top: 15px;
+}
+
+
+
+.controledecaixa{
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.555);
+  font-family: raleway;
+  font-size: 1.3vw;
+  height: 20px;
+  padding-right: 0px;
+  align-content: center;
+  text-justify: center;
+  padding-top: 0px;
+  margin-top: 20px;
+  margin-left: -80px;
+}
+

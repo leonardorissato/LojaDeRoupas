@@ -1,0 +1,109 @@
+/* SCREEN AND POPUP GENERAL */
+#screen_historico {
+    width:100%;
+    opacity:.95;
+    top:30px;
+    left:0;
+    position:fixed;
+    height: 100%;
+    transition: all 1s;
+    background-color:#313131;
+}
+
+#popupHistorico {
+    position:absolute;
+    overflow:visible;
+    left:50%;
+    top:8%;
+    max-height: 90%;
+    margin-left:-350px;
+    font-family:raleway;
+    opacity: 1;
+    background:linear-gradient(90deg, #eeeeee27 0%,#e5eeeeb9 2%, #e5eeeed3 50%, #e5eeeeb9 98%,#dfdfdf28 100%);
+    border-radius:20px 20px 20px 20px;
+    padding-bottom: 20px;
+    animation: openpopupanimation .2s ease-in-out;
+}
+
+#headerhistorico{
+    text-align:center;
+    font-size: 2.5vw;
+    font-weight: bolder;
+    color: black;
+    font-family: raleway;
+}
+
+#vendedorhistorico{
+    text-align:center;
+    font-size: 2vw;
+    font-weight: bold;
+    color:black;
+    font-family: raleway;
+
+}
+
+
+/* OUTRAS FUNÇÕES*/
+
+#table-historico{
+    width: 700px;
+    border-collapse: collapse;
+    height: 400px;
+    display: block;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    table-layout: fixed;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    opacity: 1;
+    padding: 20px;
+    
+}
+
+#table-historico th{
+    font-size: 1.3rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-family: raleway-light;
+    border: 2px solid rgba(84, 156, 11, 0);
+    background: #002468;
+    width: 1%;
+    border-radius:10px 10px 0 0
+}
+
+#table-historico td{
+    font-size: 1rem;
+    text-align: center;
+    border: 1px solid rgba(6, 12, 0, 0.432);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#table-historico tr:nth-child(even) {
+    background-color: #3d003d;
+}
+
+#table-historico tr{
+    background-color: #002d47;
+    transition: 0.5s;
+    transform: scale(1);
+}
+
+#table-historico tr:hover {
+    background-color: #4a007580;
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+
+
+#table-historico::-webkit-scrollbar {
+    cursor: pointer;
+    width: 12px;
+    background: transparent;
+}
+  
+#table-historico::-webkit-scrollbar-thumb {
+    background:  linear-gradient(180deg, #083b28d3 0%, #0a3f29b6 50%, #083b28d3 100%);
+    border-radius: 10px;
+}

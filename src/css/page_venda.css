@@ -1,0 +1,511 @@
+
+#page_venda{
+    background: linear-gradient(90deg,rgb(6, 1, 27) 0%,rgb(14, 0, 51) 50%, rgb(11, 1, 37) 100%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 87%;
+    border: hidden;
+}
+
+#venda_column_1{
+    float: left;
+    height: 100%;
+    width: 70%;
+    border: hidden;
+}
+
+#venda_pesquisa_container{
+    width: 100%;
+    height: 8%;
+    display: flex;
+}
+
+#venda_pesquisa_container div{
+    width: auto;
+    display: flex;
+    padding: 10px;
+}
+#venda_pesquisa_container div button{
+    width: auto;
+    height: auto;
+    margin-right: 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: rgb(17, 5, 58);
+    color: white;
+    cursor: pointer;
+}
+
+.buttonpesquisaactive{
+    background: linear-gradient(90deg,rgb(3, 48, 90) 0%,rgb(12, 64, 206) 50%, rgb(1, 41, 100) 100%) !important;;
+}
+
+#venda_pesquisa_container input{
+    width: 70%;
+    height: 80%;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    border: hidden;
+    float: right;
+    outline: transparent;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: lighter;
+    background: rgba(4, 59, 90, 0.308);
+    color: white;
+}
+
+#venda_categorias_container{
+    width: 100;
+    height: 12%;
+    padding:10px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: visible;
+}
+
+
+.categoriaselected{
+    background: linear-gradient(90deg,rgb(3, 48, 90) 0%,rgb(12, 64, 206) 50%, rgb(1, 41, 100) 100%) !important;;
+}
+
+
+#venda_categorias_container div{
+    width: 100px;
+    background: linear-gradient(90deg,rgb(5, 33, 59) 0%,rgb(17, 0, 63) 50%, rgb(9, 37, 80) 100%);
+    transition: all .5s;
+    cursor: pointer;
+    margin-left: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#venda_categorias_container div p{
+    width: 100px;
+    color: white;
+    text-align: center;   
+}
+
+#venda_categorias_container div:hover{
+    background: linear-gradient(90deg,rgb(3, 48, 90) 0%,rgb(12, 64, 206) 50%, rgb(1, 41, 100) 100%);
+    transform: scale(1.1);
+    transition: all .5s;
+}
+
+
+
+
+
+
+
+
+#venda_produtos_container{
+    max-height: 80%;
+    height: 80%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 98%;
+    margin-left: 1%;
+    border-radius: 15px;
+}
+
+#table_produtos {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    width: 100%;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+#table_produtos td {
+    padding: 10px 5px;
+    text-align: center;
+}
+
+#table_produtos td img {
+    height: 30px;
+    width: 30px;
+    transition: all .3s;
+    float: right;
+}
+
+
+#table_produtos tbody tr {
+    cursor: pointer;
+    transform-origin: top;
+    transition: all .4s;
+    color: white;   
+}
+
+#table_produtos tbody tr:nth-of-type(even) {
+    background-color: #00ee3b23;
+}
+
+#table_produtos tbody tr:nth-of-type(odd) {
+    background-color: #008be715;
+}
+
+
+#table_produtos tbody tr:hover {
+    background-color: #009cda2d;
+    transition: all .3s;
+}
+
+
+.popover_hidden{
+    display: none;
+}
+
+.popover_show{
+    display: '';
+    position: absolute;
+    z-index: 3;
+    margin-top: 30px;
+    margin-left: -250px;
+    border-radius: 20px;
+    overflow: hidden;
+    animation: insertpopoveranimation .2s ease-in-out;
+    transform-origin: top right;
+}
+
+.popover_show table{
+    border-collapse: collapse;
+    width: 250px;
+    opacity: 1;
+}
+
+
+.popover_show  table tr:nth-of-type(even) {
+    background-color: #170250f3 !important;
+    opacity: 1;
+    transform-origin: right !important;
+}
+
+.popover_show  table tr:nth-of-type(odd) {
+    background-color: #230341 !important;
+    opacity: 1;
+    transform-origin: right !important;
+}
+
+
+
+
+
+
+
+
+
+#venda_column_2{
+    height: 100%;
+    width: 28%;
+    overflow: hidden;
+    border: hidden;
+    float: right;
+    margin-right: 10px;
+}
+
+#venda_top{
+    position: relative;
+    width: 100%;
+    height: 10%;
+    color: whitesmoke;
+    border: hidden;
+    background: linear-gradient(90deg,  rgba(0, 225, 255, 0.082) 0%,rgba(30, 0, 112, 0.192) 50%, rgba(0, 225, 255, 0.096) 100%);
+    border-radius: 15px;
+}
+
+#venda_top select{
+    cursor: pointer;
+    width: 50%;
+    height: 100%;
+    color: white;
+    font-weight: 100;
+    font-size: 1.5vw;
+    border-radius: 15px;
+    background: linear-gradient(90deg,  rgb(16, 1, 56) 0%,rgb(15, 2, 51) 50%, rgb(15, 2, 65) 100%);
+    border: hidden;
+    outline: none;
+    box-shadow: none;
+    padding-left: 20px;
+}
+
+#venda_top input{
+    cursor: pointer;
+    width: 35%;
+    height: 80%;
+    margin-top: 5px;
+    color: white;
+    font-weight: 100;
+    font-size: 1.5vw;
+    border-radius: 15px;
+    background: linear-gradient(90deg,  rgb(20, 2, 70) 0%,rgb(15, 2, 51) 50%, rgb(15, 2, 65) 100%);
+    border: hidden;
+    outline: none;
+    box-shadow: none;
+    padding-left: 20px;
+}
+
+#venda_top img{
+    width: 10%;
+    float: right;
+    margin-top: 3%;
+    cursor: pointer;
+}
+
+
+.alertproductnotfound_show{
+    position: absolute;
+    right: 20px;
+    background: linear-gradient(90deg,  rgba(8, 1, 104, 0.089) 0%,rgb(4, 5, 71) 5%,rgb(0, 37, 78) 50%, rgb(5, 3, 94) 95%, rgba(0, 225, 255, 0.178) 100%);
+    height: 150px;
+    border-radius: 30px;
+    animation: insertpopoveranimation .2s ease;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.alertproductnotfound_show img{
+    height: 40px;
+    width: 40px!important;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.alertproductnotfound_show h{
+    text-align: center;
+    font-size: larger;
+}
+
+.alertproductnotfound_show p{
+    text-align: center;
+    font-size: larger;
+}
+
+.alertproductnotfound_hidden{
+    display: none;
+}
+
+#venda_top select option{
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1.5vw;
+    background: rgb(3, 0, 39);
+}
+
+
+#venda_table_container{
+    position: relative;
+    max-height: 69%;
+    height: 69%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: hidden;
+    border-radius: 20px;
+    background: linear-gradient(90deg,  rgba(0, 225, 255, 0.082) 0%,rgba(30, 0, 112, 0.192) 50%, rgba(0, 225, 255, 0.096) 100%);
+}
+
+#table_venda {
+    border-collapse: collapse;
+    font-size: 0.9em;
+    width: 100%;
+    font-family: sans-serif;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+#table_venda td {
+    padding: 10px 1px;
+    font-size: medium;
+}
+
+#table_venda td label {
+    height: 10px;
+    width: 20px;
+    font-size: 1.3vw;
+    font-weight: bold;
+    float: left;
+    text-align: center;
+}
+
+#table_venda td h {
+    font-size: large;
+    color: whitesmoke;
+    text-align: left;
+}
+
+#table_venda td p {
+    font-size: small;
+    font-weight: lighter;
+    padding-top: 8px;
+    margin: 0;
+}
+
+#table_venda td h1 {
+    font-size: large;
+    font-weight: lighter;
+    padding-top: 8px;
+    margin: 0;
+}
+
+.minuspluscart {
+    height: 20px;
+    width: 20px;
+    float: left;
+    transition: all .3s;
+    padding: 3px;
+}
+
+.trashcancart {
+    height: 25px;
+    width: 25px;
+    float: left;
+    transition: all .3s;
+    padding: 3px;
+}
+
+
+
+
+
+#table_venda tbody tr:nth-of-type(even) {
+    background-color: #0eaeee10;
+    transition: all .3s;
+    color: white;
+    transform-origin: top;
+}
+
+#table_venda tbody tr:nth-of-type(odd) {
+    background-color: #3200e721;
+    transition: all .3s;
+    color: white;
+    transform-origin: top;
+}
+
+
+#table_venda tbody tr:hover {
+    background-color: rgba(82, 28, 133, 0.849);
+    transition: all .3s;
+    transform: scale(1);
+}
+
+
+
+
+#venda_bottom{
+    position: relative;
+    background: linear-gradient(90deg,  rgba(0, 225, 255, 0.082) 0%,rgba(30, 0, 112, 0.192) 50%, rgba(0, 225, 255, 0.096) 100%);
+    margin-top: 4px;
+    width: 100%;
+    height: 20%;
+    border: hidden;
+    border-radius: 15px;
+}
+
+#venda_bottom div{
+    width: 100%;
+    height: 48%;
+    margin-bottom: 4px;
+    border-radius: 10px;
+    padding: 3px;
+}
+
+#venda_bottom div label{
+    width: 49%;
+    float: left;
+    padding-top: 20px;
+    color: white;
+    font-size: larger;
+    text-align: center;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+#cart_valor_total{
+    font-size: larger;
+    text-align: left;
+}
+
+#btn_cancelarcompra{
+    width: 18%;
+    height: 100%;
+    border: hidden;
+    background: linear-gradient(90deg,  #020c03 0%,rgb(2, 7, 2) 50%, #060c05 100%);
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all .3s;
+    outline: none;
+}
+
+#btn_cancelarcompra:hover{
+    background: linear-gradient(90deg,  #020c03 0%,rgb(47, 48, 47) 50%, #060c05 100%);
+    transition: all .3s;
+}
+
+#btn_cancelarcompra img{
+    height: 40px;
+    float: left;
+    margin-left: 8px;
+}
+
+#btn_finalizarcompra{
+    background: linear-gradient(90deg,  #020c03 0%,rgb(2, 7, 2) 50%, #060c05 100%);
+    border: hidden;
+    border-radius: 10px;
+    width: 80%;
+    height: 100%;
+    cursor: pointer;
+    transition: all .5s;
+    outline: none;
+}
+
+#btn_finalizarcompra img{
+    height: 40px;
+    width: auto;
+    padding-top: 8px;
+    padding-left: 20px;
+    float: left;
+}
+
+#btn_finalizarcompra p{
+    color: white;
+    float: right;
+    font-family: raleway;
+    font-size: large;
+    padding-right: 30px;
+}
+
+#btn_finalizarcompra:hover{
+    background: linear-gradient(90deg,  #020c03 0%,rgb(47, 48, 47) 50%, #060c05 100%);
+    transition: all .5s;
+}
+
+
+
+
+
+
+
+
+
+
+div::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+    background: darkblue;
+}
+
+div::-webkit-scrollbar-thumb{
+    width: 5px;
+    height: 5px;
+    background: darkcyan;
+}
+
+

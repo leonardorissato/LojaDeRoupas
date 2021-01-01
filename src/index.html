@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UpOdonto</title>
+  <link rel="icon" type="image/png" href="./img/logo.png" />
+  <link href="./css/main.css" rel="stylesheet" />
+  <link href="./css/popup_vendedor.css" rel="stylesheet" />
+  <link href="./css/popup_produto.css" rel="stylesheet" />
+  <link href="./css/popup_venda.css" rel="stylesheet" />
+  <link href="./css/popup_categoria.css" rel="stylesheet" />
+  <link href="./css/page_estoque.css" rel="stylesheet" />
+  <link href="./css/page_admin.css" rel="stylesheet" />
+  <link href="./css/page_venda.css" rel="stylesheet" />
+  <link href="./css/popup_confirmavenda.css" rel="stylesheet" />
+  <link href="./css/popup_reminder.css" rel="stylesheet" />
+  <link href="./css/popup_lucro.css" rel="stylesheet" />
+  <link href="./css/popup_historico.css" rel="stylesheet" />
+  <link href="./css/fonts.css" rel="stylesheet" />
+
+</head>
+
+
+<body class="body">
+  <!-- TITLE BAR -->
+  <div class='title-bar' style="z-index: 100;">
+    <img class="title-options" onclick="click_options()" src="./img/title-options.png" onclick="minimize_application()">
+    <div id="dropdown-content" class="dropdown-content">
+      <li onclick="minimize_application()">
+        <img src="./img/title-min.png">
+        <h>Minimizar Janela</h>
+      </li>
+      <li onclick="maximize_application()"">
+        <img src=" ./img/title-max.png">
+        <h>Maximizar Janela</h>
+      </li>
+      <li onclick=" restart_application()">
+        <img src="./img/icon-refresh.png">
+        <h>Reiniciar Programa</h>
+      </li>
+      <li onclick=" quit_application()">
+        <img src="./img/title-quit.png">
+        <h>Fechar Programa</h>
+      </li>
+      <hr>
+      <li onclick="confirma_hora()">
+        <img src="./img/confirmahora.png">
+        <h>Confirmar Horários</h>
+      </li>
+      <hr>
+      <li onclick="option_changefolder()">
+        <img src="./img/icon-changefolder.png">
+        <h>Trocar Pasta Databases</h>
+      </li>
+      <li onclick="openpathtodatabase()">
+        <img src="./img/icon-openfolder.png">
+        <h>Abrir Pasta Databases</h>
+      </li>
+      <li onclick="option_developerconsole()">
+        <img src="./img/icon-tools.png">
+        <h>Developer Tools</h>
+      </li>
+      <hr>
+      <li onclick="click_options()">
+        <img src="./img/closebutton.png">
+        <h>Fechar Este Menu</h>
+      </li>
+    </div>
+    <h class='title-logo'>Xanxerêxurêrê</h>
+    <img class="title-min" src="./img/title-min.png" onclick="minimize_application()">
+    <img class="title-max" src="./img/title-max.png" onclick="maximize_application()">
+    <img class="title-quit" src="./img/title-quit.png" onclick="quit_application()">
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+    <!-- HEAD -->
+    <div class="head">
+      <div class="topnav">
+        <a class="active" onclick="click_home('home')" id="topnav_home">Página Inicial</a>
+        <a class="inactive" onclick="click_home('estoque')" id="topnav_estoque">Estoque</a>
+        <a class="inactive" onclick="click_home('admin')" id="topnav_admin">Admin</a>
+      </div>
+      <div class="clock">
+        <span id="date">17</span>
+        <span id="month">Maio</span>
+        <span id="year">1995</span>
+        <span id="hours">19</span>:<span id="minutes">49</span>:<span id="seconds">00</span>
+      </div>
+      <img src="./img/logo.png" onclick="clicklogo()"></img>
+    </div>
+
+    <!-- Splash Screen -->
+    <div class='splashscreen' id='splashscreen' style="display: none;">
+    </div>
+
+    <!-- popup vendedor-->
+    <div id="screen_vendedor" style="display: none; z-index: 7;">
+      <div id="popupVendedor">
+        <form action="#" autocomplete="off" id="form_vendedor" method="post" name="form_vendedor">
+          <img class="closepopupbutton" id="close" src="./img/closebutton.png" onclick="close_popupvendedor()">
+          <h2 id="header_vendedor"> Adicionar Vendedor </h2>
+          <i id="id_vendedor" style="display: none;"></i>
+          <hr>
+          <a id="btn_excluirvendedor"></a>
+          <input id="name_vendedor" name="A" autocomplete="off" placeholder="Nome" type="text">
+          <input id="tel_vendedor" name="B" placeholder="Telefone" type="number">
+
+          <a onclick="submit_vendedor()" id="submit_vendedor">SALVAR</a>
+        </form>
+      </div>
+    </div>
+
+    <!-- popup produto  -->
+    <div id="screen_produto" style="display: none; z-index: 5;">
+      <div id="popupproduto">
+        <form action="#" id="form_produto" method="post" name="form">
+          <img class="closepopupproduto" id="close" src="./img/closebutton.png" onclick="close_popupproduto()">
+          <i id="id_produto" style="display: none;"></i>
+          <h2 id="header_produto">Adicionar Produto</h2>
+          <hr>
+          <a id="btn_excluirproduto"></a>
+          <div>
+            <input id="produto_nome" name="produto_nome" placeholder="Nome do Produto" type="text">
+            <select name="selector_categoriaproduto" id="selector_categoriaproduto">
+              <option value="" disabled selected hidden>Categoria</option>
+              <option value="Categoria 1">Categoria 1</option>
+              <option value="Categoria 1">Categoria 2</option>
+              <option value="Categoria 1">Categoria 3</option>
+              <option value="Categoria 1">Categoria 4</option>
+            </select>
+          </div>
+          <div><input id="produto_descricao" name="produto_descricao" placeholder="Descrição" type="text"></div>
+          <div>
+            <input id="produto_valorcompra" name="produto_valorcompra" placeholder="Valor de Compra" type="number">
+            <input id="produto_valorvenda" name="produto_valorvenda" placeholder="Valor de Venda" type="number">
+          </div>
+          <div>
+            <img id='btn_addopcao' onclick="add_option_produto()" src="./img/icon-plus.png">
+            <table id="table_opcoes">
+            </table>
+          </div>
+
+
+          <a href="javascript:%20submit_produto()" id="submit_produto">SALVAR</a>
+        </form>
+      </div>
+    </div>
+
+    <!-- popup confirmavenda  -->
+    <div id="screen_confirmavenda" style="display: none; z-index: 5;">
+      <div id="popupconfirmavenda">
+        <form action="#" id="form_confirmavenda" method="post" name="form">
+          <img class="closepopupconfirmavenda" id="close" src="./img/closebutton.png"
+            onclick="close_popupconfirmavenda()">
+          <i id="id_venda" style="display: none;"></i>
+          <h2 id="header_venda">Confirmar Venda</h2>
+          <hr>
+          <a id="btn_devolucao"></a>
+          <a id="btn_excluirvenda" onclick="excluirvenda()"></a>
+
+          <div1>
+            <p id="confirmavenda_vendedor">Fulano de Tal da Silva</p>
+            <p id="confirmavenda_status">Status</p>
+          </div1>
+
+          <table id="table_confirmavenda">
+            <thead>
+              <th style="width:35%">Produto</th>
+              <th style="width:15%">Opção</th>
+              <th style="width:10%">Qtdade</th>
+              <th style="width:20%">Valor</th>
+              <th style="width:20%">Total</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Cueca Frouxa</td>
+                <td>Amarela</td>
+                <td>2<img src="./img/icon-alert.png" class="bouncingbuttonicon" title="TESTE"></td>
+                <td>R$ 350,00</td>
+                <td>R$ 700,00</td>
+              </tr>
+              <tr>
+                <td>Cueca Frouxa</td>
+                <td>Amarela</td>
+                <td>2</td>
+                <td>R$ 350,00</td>
+                <td>R$ 700,00</td>
+              </tr>
+              <tr>
+                <td>Cueca Frouxa</td>
+                <td>Amarela</td>
+                <td>2</td>
+                <td>R$ 350,00</td>
+                <td>R$ 700,00</td>
+              </tr>
+              <tr>
+                <td>Cueca Frouxa</td>
+                <td>Amarela</td>
+                <td>2</td>
+                <td>R$ 350,00</td>
+                <td>R$ 700,00</td>
+              </tr>
+              <tr>
+                <td>Cueca Frouxa</td>
+                <td>Amarela</td>
+                <td>2</td>
+                <td>R$ 350,00</td>
+                <td>R$ 700,00</td>
+              </tr>
+              <tr>
+                <td>Cueca Frouxa</td>
+                <td>Amarela</td>
+                <td>2</td>
+                <td>R$ 350,00</td>
+                <td>R$ 700,00</td>
+              </tr>
+              <tr>
+                <td>Cueca Frouxa</td>
+                <td>Amarela</td>
+                <td>2</td>
+                <td>R$ 350,00</td>
+                <td>R$ 700,00</td>
+              </tr>
+              <tr>
+                <td>Cueca Frouxa</td>
+                <td>Amarela</td>
+                <td>2</td>
+                <td>R$ 350,00</td>
+                <td>R$ 700,00</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+          <div>
+            <input id='confirmavenda_obs' placeholder="Observação" type="text">
+            <select id="confirmavenda_selectformapag">
+              <option selected hidden value="">Forma de Pagamento</option>
+              <option value="Dinheiro">Dinheiro</option>
+              <option value="Crédito">Crédito</option>
+              <option value="Débito">Débito</option>
+              <option value="Cheque">Cheque</option>
+              <option value="Transferência">Transferência</option>
+              <option value="Outros">Outros</option>
+            </select>
+            <p id="confirmavenda_valortotal">R$ 750,00</p>
+          </div>
+
+          <a id="submit_confirmavenda">Confirmar</a>
+        </form>
+      </div>
+    </div>
+
+    <!-- popup  lucro-->
+    <div id="screen_lucro" style="display: none; z-index: 5;">
+      <div id="popupLucro">
+        <form action="#" id="form_lucro" method="post" name="form">
+          <img class="closepopupbutton" id="close" src="./img/closebutton.png" onclick="close_popuplucro()">
+          <h2 id="header-add"> ADD </h2>
+          <hr>
+          <i id="addlucroid" style="display: none;"></i>
+          <a id="btnexcluirlucro" class="btnexcluirconsulta" onclick="excluirlucro()"></a>
+          <input id="dateaddlucro" name="date" placeholder="Data" type="date">
+          <input id="valoradd" name="valoradd" placeholder="Valor" type="number">
+          <select name="movimentacao_lucro" id="movimentacao_lucro">
+            <option value="" disabled selected hidden>Tipo de Movimentação</option>
+          </select>
+          <select name="responsavel_lucro" id="responsavel_lucro">
+            <option value="" disabled selected hidden>Responsável</option>
+            <option value="Vendedor 1">Vendedor 1</option>
+          </select>
+          <input id="obslucro" name="obslucro" placeholder="Descrição" type="text">
+          <div id='checkaddcontrolecontainer'>
+            <input id='checkaddcontrole' name="checkaddcontrole" type="checkbox">
+            <label for="checkaddcontrole"> Adicionar ao Controle do Caixa</label>
+          </div>
+          <a onclick="submit_lucro()" id="submit_lucro">SALVAR</a>
+        </form>
+      </div>
+    </div>
+
+    <!-- popup categoria -->
+    <div id="screen_categoria" style="display: none; z-index: 5;">
+      <div id="popupCategoria">
+        <form action="#" id="form_categoria" method="post" name="form">
+          <img class="closepopupbutton" id="close" src="./img/closebutton.png" onclick="close_categoria()">
+          <h2 id="headercategoria">Categorias</h2>
+          <hr>
+          <i id="categoriaid" style="display: none;"></i>
+          <a id="btnexcluircategoria"></a>
+          <input id="text_categoria" name="categoria" placeholder="Categoria" type="text">
+
+          <a href="javascript:%20submit_categoria()" id="submit_categoria">SALVAR</a>
+        </form>
+      </div>
+    </div>
+
+    <!-- popup Historico -->
+    <div id="screen_historico" style="display: none; z-index: 4;">
+      <div id="popupHistorico">
+        <p id="idhistorico" style="display: none;"></p>
+        <h2 id="headerhistorico">Histórico do Vendedor</h2>
+        <h2 id="vendedorhistorico">Leonardo Almeida Rissato</h2>
+        <img class="closepopupbutton" id="close" src="./img/closebutton.png" onclick="close_historico()">
+        <table id="table-historico">
+          <thead>
+            <th style="width:12%">Data</th>
+            <th style="width:8%">Hora</th>
+            <th style="width:40%">Produtos</th>
+            <th style="width:10%">Valor</th>
+            <th style="width:10%">Infos</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>25/09/2020</td>
+              <td>14:29</td>
+              <td>Camisa 3 Golas</td>
+              <td>R$ 350,00</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>25/09/2020</td>
+              <td>14:29</td>
+              <td>Camisa 3 Golas</td>
+              <td>R$ 350,00</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>25/09/2020</td>
+              <td>14:29</td>
+              <td>Camisa 3 Golas</td>
+              <td>R$ 350,00</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>25/09/2020</td>
+              <td>14:29</td>
+              <td>Camisa 3 Golas</td>
+              <td>R$ 350,00</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>25/09/2020</td>
+              <td>14:29</td>
+              <td>Camisa 3 Golas</td>
+              <td>R$ 350,00</td>
+              <td>--</td>
+            </tr>
+            <tr>
+              <td>25/09/2020</td>
+              <td>14:29</td>
+              <td>Camisa 3 Golas</td>
+              <td>R$ 350,00</td>
+              <td>--</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+
+
+    <!-- VENDA -->
+    <div id='page_venda' style="display: block;">
+      <div id='venda_column_1'>
+        <div id="venda_pesquisa_container">
+          <div>
+            <button id="pesquisa_produto" onclick="metodopesquisa('pesquisa_produto')"
+              class="buttonpesquisaactive">Produto</button>
+            <button id="pesquisa_descricao" onclick="metodopesquisa('pesquisa_descricao')">Descrição</button>
+            <button id="pesquisa_codigo" onclick="metodopesquisa('pesquisa_codigo')">Código</button>
+          </div>
+          <input id='searchproduto' type="text" placeholder="Pesquisar Produto" onkeyup="searchproduto()">
+        </div>
+        <div id="venda_categorias_container">
+          <div class="categoriaselected">
+            <p>Todas</p>
+          </div>
+          <div>
+            <p>Camisas</p>
+          </div>
+          <div>
+            <p>Calças</p>
+          </div>
+          <div>
+            <p>Bermudas</p>
+          </div>
+          <div>
+            <p>Vestidos</p>
+          </div>
+          <div>
+            <p>Meias</p>
+          </div>
+          <div>
+            <p>Roupas Femininas</p>
+          </div>
+          <div>
+            <p>Roupas Masculinas</p>
+          </div>
+        </div>
+        <div id="venda_produtos_container">
+          <table id="table_produtos">
+            <thead>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="display: none;">idproduto</td>
+                <td style="width: 5%;">202031744</td>
+                <td style="width: 15%;">Roupas de praia</td>
+                <td style="width: 25%;">Teste de nome com bastante letra</td>
+                <td style="width: 35%;">Teste de Descrição do produto com bastante letra</td>
+                <td style="width: 10%;">35</td>
+                <td style="width: 15%;">R$ 125,43</td>
+                <td style="width: 5%;">
+                  <img class="bouncingbuttonicon" src="./img/cart-add.png" onclick="getoptionsforproduct('popover001')">
+                  <div id='popover001' class="popover_show">
+                    <table>
+                      <tr>
+                        <td>Opção 1</td>
+                        <td>Qtdade</td>
+                        <td>++</td>
+                      </tr>
+                      <tr>
+                        <td>Opção 1</td>
+                        <td>Qtdade</td>
+                        <td>++</td>
+                      </tr>
+                      <tr>
+                        <td>Opção 1</td>
+                        <td>Qtdade</td>
+                        <td>++</td>
+                      </tr>
+                      <tr>
+                        <td>Opção 1</td>
+                        <td>Qtdade</td>
+                        <td>++</td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="display: none;">idproduto</td>
+                <td style="width: 5%;">202031744</td>
+                <td style="width: 15%;">Roupas de praia</td>
+                <td style="width: 25%;">Teste de nome com bastante letra</td>
+                <td style="width: 35%;">Teste de Descrição do produto com bastante letra</td>
+                <td style="width: 10%;">35</td>
+                <td style="width: 15%;">R$ 125,43</td>
+                <td style="width: 5%;">
+                  <img class="bouncingbuttonicon" src="./img/cart-add.png" onclick="getoptionsforproduct('popover002')">
+                  <div id='popover002' class="popover_hidden">
+                    <table>
+                      <tr>
+                        <td>Opção 1</td>
+                        <td>Qtdade</td>
+                        <td>++</td>
+                      </tr>
+                      <tr>
+                        <td>Opção 1</td>
+                        <td>Qtdade</td>
+                        <td>++</td>
+                      </tr>
+                      <tr>
+                        <td>Opção 1</td>
+                        <td>Qtdade</td>
+                        <td>++</td>
+                      </tr>
+                      <tr>
+                        <td>Opção 1</td>
+                        <td>Qtdade</td>
+                        <td>++</td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div id='venda_column_2'>
+        <div id='venda_top'>
+          <select name="selectorvendedorcart" id="selectorvendedorcart">
+            <option value="Vendedor 1">Vendedor 1</option>
+            <option value="Vendedor 2">Vendedor 2</option>
+            <option value="Vendedor 3">Vendedor 3</option>
+          </select>
+          <input id="addcartbycode" onkeyup="addcartbycode(event.key)" placeholder="Código" type="text">
+          <img src="./img/cart.png" onclick="addcartbycode('Enter')" class="bouncingbuttonicon">
+          <div id="alert_product_notfound" class="alertproductnotfound_hidden">
+            <img src="./img/icon-notfound.png">
+            <h>Produto não Encontrado</h>
+            <p id='productnotfound_code'>000334</p>
+          </div>
+        </div>
+        <div id='venda_table_container'>
+          <table id="table_venda">
+            <thead>
+            </thead>
+            <tbody>
+
+            </tbody>
+          </table>
+        </div>
+        <div id='venda_bottom'>
+          <div>
+            <label>Total </label>
+            <label id='cart_valor_total'>R$ 144,95</label>
+          </div>
+          <div>
+            <button id="btn_cancelarcompra" onclick="cancelar_compra()">
+              <img src="./img/cart-cancel.png">
+            </button>
+            <button id="btn_finalizarcompra" onclick="finalizar_compra()">
+              <img src="./img/shopping-bag.png">
+              <p id='textfinalizarcompra'>Finalizar Compra</p>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ESTOQUE -->
+    <div class="estoquepage" id="estoquepage" style="display: none;">
+      <div class="estoque-row-1">
+        <div id="estoque_pesquisa_container">
+          <div>
+            <button id="estoquepesquisa_produto" onclick="metodopesquisaestoque('estoquepesquisa_produto')"
+              class="estoquebuttonpesquisaactive">Produto</button>
+            <button id="estoquepesquisa_descricao"
+              onclick="metodopesquisaestoque('estoquepesquisa_descricao')">Descrição</button>
+            <button id="estoquepesquisa_codigo"
+              onclick="metodopesquisaestoque('estoquepesquisa_codigo')">Código</button>
+          </div>
+          <input id='estoquepagesearch' type="text" placeholder="Pesquisar Produto" onkeyup="estoquepagesearch()">
+        </div>
+        <img id='btn_addproduto_estoque' src="./img/icon-addproduct.png" onclick="open_popupproduto()">
+        <div id="container_categoria_estoque">
+          <img id='btn_addcategoria_estoque' src="./img/icon-addcategory.png" onclick="clickcategoriabutton()">
+          <div id="estoque_showhidecategoria" class="estoque_showhidecategoria_hidden">
+            <table id="table_estoque_categorias">
+              <tr>
+                <td>Adicionar Nova</td>
+                <td><img src="./img/icon-addcategory.png"></td>
+              </tr>
+              <tr>
+                <td>Categoria 1</td>
+                <td><img src="./img/editpencil.png"></td>
+              </tr>
+              <tr>
+                <td>Categoria 2</td>
+                <td><img src="./img/editpencil.png"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div id="container_vendedor_estoque">
+          <img id='btn_addvendedor_estoque' src="./img/icon-addseller.png" onclick="clickvendedorbutton()">
+          <div id="estoque_showhidevendedor" class="estoque_showhidevendedor_hidden">
+            <table id="table_estoque_vendedor">
+              <tr>
+                <td>Adicionar Novo</td>
+                <td></td>
+                <td><img src="./img/icon-addseller.png"></td>
+              </tr>
+              <tr>
+                <td>Vendedor 1</td>
+                <td><img src="./img/icon-details.png"></td>
+                <td><img src="./img/editpencil.png"></td>
+              </tr>
+              <tr>
+                <td>Vendedor 2</td>
+                <td><img src="./img/icon-details.png"></td>
+                <td><img src="./img/editpencil.png"></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="estoque-row-2">
+        <table id="table-estoque" class="table-estoque">
+          <thead>
+            <th style="width:5%">N°</th>
+            <th style="display: none;">Código</th>
+            <th style="width:28%">Produto</th>
+            <th style="width:20%">Descrição</th>
+            <th style="width:10%">Qtdade</th>
+            <th style="width:10%">Compra</th>
+            <th style="width:10%">Venda</th>
+            <th style="width:10%">Lucro</th>
+            <th style="width:7%">Editar</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td style="display: none;">sku27572</td>
+              <td>Calça Colada de Baitola</td>
+              <td>só uma calça normal</td>
+              <td>100</td>
+              <td>R$ 135,23</td>
+              <td>R$ 158,98</td>
+              <td>10%</td>
+              <td>
+                <img class="bouncingbuttonicon" src='./img/editpencil.png'>
+                <img class="bouncingbuttonicon" src='./img/trash-can.png'>
+              </td>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td style="display: none;">sku27572</td>
+              <td>Calça Colada de Baitola</td>
+              <td>só uma calça normal</td>
+              <td>100</td>
+              <td>R$ 135,23</td>
+              <td>R$ 158,98</td>
+              <td>10%</td>
+              <td>XX XX</td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+    </div>
+
+
+    <!-- ADMIN -->
+    <div class="adminpage" id="adminpage" style="display: none;">
+      <div class="top-profit">
+        <input id="datestart" name="datestart" placeholder="Data Inicial" type="date">
+        <input id="datefinal" name="datefinal" placeholder="Data Final" type="date">
+        <button onclick="clickmostrarresultados()">Mostrar Resultados</button>
+        <button onclick="open_popupvendedor()">Adicionar Vendedor</button>
+        <input class="controledecaixa" id='controledecaixa' name="controledecaixa" type="checkbox"
+          onclick="clickcontroledecaixa()">
+        <div class="controledecaixa" for="controledecaixa"> Controle de Caixa</div>
+      </div>
+
+      <div>
+        <div class="column-profit">
+          <div class="card-profit">
+            <h>Receitas</h>
+            <table id="table-lucro" class="table-lucro">
+              <thead>
+                <th style="width: 10%;">Data</th>
+                <th style="width: 20%;">Resp.</th>
+                <th style="width: 10%;">Valor</th>
+                <th style="width: 20%;">Tipo</th>
+                <th style="width: 35%;">Descrição</th>
+                <th style="width: 5%;">Opt</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>17/05/2020</td>
+                  <td>Dra Raysa</td>
+                  <td>120,00</td>
+                  <td>Cheque</td>
+                  <td>Só pra testar a interface</td>
+                  <td>---</td>
+                </tr>
+                <tr>
+                  <td>17/05/2020</td>
+                  <td>Dra Walkiria</td>
+                  <td>120,00</td>
+                  <td>Dinheiro</td>
+                  <td>Só pra testar a interface 2</td>
+                  <td>---</td>
+                </tr>
+              </tbody>
+
+            </table>
+            <div class="resumo-final">
+              <button onclick="open_popuplucro('lucro')" class="btn-add-lucro">Adicionar Lucro</button>
+              <label id="valor-total-lucro">Lucro Total</label>
+            </div>
+
+          </div>
+        </div>
+        <div class=" column-profit">
+          <div class="card-profit">
+            <h>Despesas</h>
+            <table id="table-gasto" class="table-gasto">
+              <thead>
+                <th style="width: 10%;">Data</th>
+                <th style="width: 20%;">Resp.</th>
+                <th style="width: 10%;">Valor</th>
+                <th style="width: 20%;">Tipo</th>
+                <th style="width: 35%;">Descrição</th>
+                <th style="width: 5%;">Opt</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>17/05/2020</td>
+                  <td>Dra Raysa</td>
+                  <td>120,00</td>
+                  <td>Cheque</td>
+                  <td>Só pra testar a interface</td>
+                  <td>---</td>
+                </tr>
+                <tr>
+                  <td>17/05/2020</td>
+                  <td>Dra Walkiria</td>
+                  <td>120,00</td>
+                  <td>Dinheiro</td>
+                  <td>Só pra testar a interface 2</td>
+                  <td>---</td>
+                </tr>
+              </tbody>
+
+            </table>
+            <div class="resumo-final">
+              <button onclick="open_popuplucro('gasto')" class="btn-add-lucro">Adicionar Gasto</button>
+              <label id="valor-total-gasto">Gasto Total</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-profit">
+        <div class="graphprofit"><canvas id="graphlucro"></canvas></div>
+        <div class="profitgeral">
+          <div>
+            <img src="./img/profiticon.png"></img>
+          </div>
+          <div>
+            <h3>Fluxo de caixa</h3>
+          </div>
+          <div>
+            <h3 id='rentabilidade'>000.00</h3>
+          </div>
+        </div>
+        <div class="graphprofit"><canvas id="graphgasto"></canvas></div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <script src="./js/main.js"></script>
+  <script src="./js/clock.js"></script>
+  <script src="./js/Chart.js"></script>
+  <script src="./js/sweetalert.min.js"></script>
+
+</body>
+
+</html>

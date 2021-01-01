@@ -1,0 +1,309 @@
+
+.estoquepage{
+    align-items: center;
+}
+
+.estoque-row-1{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+#estoque_pesquisa_container{
+    width: 60%;
+    height: 50px;
+    display: flex;
+}
+
+#estoque_pesquisa_container div{
+    width: auto;
+    display: flex;
+    padding: 10px;
+}
+
+#estoque_pesquisa_container div button{
+    width: auto;
+    height: auto;
+    margin-right: 5px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background: rgb(17, 5, 58);
+    color: white;
+    cursor: pointer;
+}
+
+.estoquebuttonpesquisaactive{
+    background: linear-gradient(90deg,rgb(3, 48, 90) 0%,rgb(12, 64, 206) 50%, rgb(1, 41, 100) 100%) !important;;
+}
+
+#estoque_pesquisa_container input{
+    width: 80%;
+    height: 80%;
+    margin-top: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    border: hidden;
+    float: right;
+    outline: transparent;
+    padding-left: 30px;
+    font-size: 20px;
+    font-weight: lighter;
+    background: rgba(4, 59, 90, 0.308);
+    color: white;
+}
+
+
+
+
+
+
+
+#btn_addproduto_estoque {
+    cursor:pointer;
+    height: 50px;
+    width: auto;
+    transition: 0.5s;
+    margin-left: 20px;
+    float: left;
+    opacity: .5;
+}
+
+#btn_addproduto_estoque:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+
+
+
+
+#container_categoria_estoque img {
+    cursor:pointer;
+    height: 50px;
+        width: auto;
+    transition: 0.5s;
+    margin-left: 20px;
+    opacity: .5;
+}
+
+#container_categoria_estoque img:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.estoque_showhidecategoria_hidden{
+    display: none;
+}
+
+.estoque_showhidecategoria_show{
+    border-radius: 20px;
+    margin-left: -200px;
+    position: absolute;
+    overflow: hidden;
+    box-shadow: 3px 3px 3px 3px #88888849;
+    animation: insertpopoveranimation .2s ease-in-out;
+}
+
+.estoque_showhidecategoria_show table{
+    border-collapse: collapse;
+    height: auto;
+    float: left;
+    width: 400px;
+}
+
+.estoque_showhidecategoria_show table td{
+    font-family: raleway;
+    color: white;
+    font-size: large;
+    padding: 10px 0px 10px 30px;
+}
+
+.estoque_showhidecategoria_show table td img{
+    height: 30px !important;
+    width: 30px !important;
+}
+
+
+.estoque_showhidecategoria_show  table tr:nth-of-type(even) {
+    background-color: #170250f3 !important;
+    opacity: 1;
+    transform-origin: right !important;
+}
+
+.estoque_showhidecategoria_show  table tr:nth-of-type(odd) {
+    background-color: #230341 !important;
+    opacity: 1;
+    transform-origin: right !important;
+}
+
+
+
+
+
+
+#container_vendedor_estoque img {
+    cursor:pointer;
+    height: 50px;
+        width: auto;
+    transition: 0.5s;
+    margin-left: 20px;
+    opacity: .5;
+}
+
+#container_vendedor_estoque img:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.estoque_showhidevendedor_hidden{
+    display: none;
+}
+
+.estoque_showhidevendedor_show{
+    border-radius: 20px;
+    margin-left: -250px;
+    position: absolute;
+    overflow: hidden;
+    z-index: 3;
+    box-shadow: 3px 3px 3px 3px #88888850;
+    animation: insertpopoveranimation .2s ease-in-out;
+}
+
+.estoque_showhidevendedor_show table{
+    border-collapse: collapse;
+    height: auto;
+    float: left;
+    width: 500px;
+}
+
+.estoque_showhidevendedor_show table td{
+    font-family: raleway;
+    color: white;
+    font-size: large;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.estoque_showhidevendedor_show table td img{
+    height: 30px !important;
+    width: 30px !important;
+}
+
+
+.estoque_showhidevendedor_show  table tr:nth-of-type(even) {
+    background-color: #170250f3 !important;
+    opacity: 1;
+    transform-origin: right !important;
+}
+
+.estoque_showhidevendedor_show  table tr:nth-of-type(odd) {
+    background-color: #230341 !important;
+    opacity: 1;
+    transform-origin: right !important;
+}
+
+
+
+
+#btn_addvendedor_estoque {
+    cursor:pointer;
+    height: 50px;
+    width: auto;
+    transition: 0.5s;
+    margin-left: 20px;
+    opacity: .5;
+}
+
+#btn_addvendedor_estoque:hover{
+    transition: 0.5s;
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+
+
+
+
+/*-------------------------------------------*/
+.estoque-row-2{
+    max-height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.table-estoque{
+    cursor: pointer;
+    color: white;
+    margin: 10px;
+    width: 100%;
+    border-collapse: collapse;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    table-layout: fixed;
+}
+
+.table-estoque th{
+    font-size: 1vw;
+    text-align: center;
+    text-emphasis-style: bold;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: hidden;
+    background: rgba(33, 11, 156, 0.164);
+    padding: 10px;
+}
+
+.table-estoque td{
+    font-size: .9vw;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table-estoque td img{
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+}
+
+
+.table-estoque tr:nth-child(even) {
+    background-color: #068f1136;
+}
+
+
+.table-estoque tr:hover {
+    background-color: #8f06617c;
+    transition: 0.5s;
+}
+  
+
+.activerow{
+    height: auto;
+    display: '';
+    transition: all 0.1s ease; 
+}
+
+.inactiverow{
+    visibility:collapse;
+    transition: all 0.1s ease;
+}
+
+
+
+
+@keyframes insertpopoveranimation {
+    0% {
+      transform: scaleY(0) scaleX(0) scaleZ(0);
+    }
+    100% {
+      transform: scaleY(1) scaleX(1) scaleZ(1);
+    }
+}

@@ -1,0 +1,124 @@
+/* SCREEN AND POPUP GENERAL */
+#screen_lucro {
+    width:100%;
+    height:100%;
+    opacity:.95;
+    top:30px;
+    left:0;
+    display:none;
+    position:fixed;
+    background-color:#313131;
+    overflow:auto
+}
+
+#popupLucro{
+    position:absolute;
+    border-radius:20px 20px 20px 20px;
+    left:50%;
+    top:12%;
+    margin-left:-202px;
+    font-family:raleway;
+    background:linear-gradient(90deg, #eeeeee27 0%,#e5eeeeb9 2%, #e5eeeed3 50%, #e5eeeeb9 98%,#dfdfdf28 100%);
+}
+
+
+/* ELEMENTS ON FORM */
+#form_lucro {
+    max-width:400px;
+    min-width:350px;
+    height: 90%;
+    padding:10px 50px;
+    border-radius:10px;
+    font-family:raleway;
+}
+    
+#form_lucro p {
+margin-top:30px
+}
+
+#form_lucro h2 {
+padding:20px 35px;
+margin:-10px -50px;
+text-align:center;
+border-radius:10px 10px 0 0
+}
+
+#form_lucro hr {
+margin:10px -50px;
+border:0;
+border-top:1px solid rgb(150, 150, 150)
+}
+
+#form_lucro input {
+    width:100%;
+    padding:5px;
+    margin-top:10px;
+    border:1px solid rgb(150, 148, 148);
+    background: #e5eeeee3;
+    padding-left:10px;
+    font-size:16px;
+    font-family:raleway;
+}
+
+#form_lucro select {
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:1px solid rgb(150, 148, 148);
+    background: #e5eeeee3;
+    padding-left:10px;
+    font-size:16px;
+    font-family:raleway;
+}
+
+#checkaddcontrolecontainer{
+    padding-top: 10px;
+    padding-bottom: 0px;
+    display: flex;
+    align-content: center;
+    text-justify: center;
+}
+
+#checkaddcontrolecontainer input{
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    margin-left: 0px;
+}
+
+#checkaddcontrolecontainer label{
+    margin-left: -50px;
+    margin-top: 2px;
+    font-family: raleway;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 12px;
+    color: black;
+    font-weight: 500;
+    width: 500px;
+}
+
+
+#submit_lucro {
+    margin-top: 20px;
+    padding: 20px;
+    text-decoration:none;
+    width:100%;
+    text-align:center;
+    display:block;
+    background: linear-gradient(90deg,rgb(199, 196, 3) 0%,rgb(94, 92, 0) 50%, rgb(181, 212, 0) 100%);
+    color:#fff;
+    font-weight: 20;
+    border:2px solid #d4aa00;
+    font-size:20px;
+    cursor:pointer;
+    border-radius:8px;
+    transition: 0.5s;
+}
+    
+#submit_lucro:hover{
+    background: linear-gradient(90deg,rgb(199, 196, 3) 0%,rgb(199, 196, 1) 50%, rgb(181, 212, 0) 100%);
+    transition: 0.5s;
+    transform: scale(1.1);
+}
+    

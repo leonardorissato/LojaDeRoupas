@@ -1,0 +1,28 @@
+
+@font-face {
+    font-family: chilanka;
+    src: url('./fonts/Chilanka-Regular.ttf');
+}
+@font-face {
+    font-family: dancingscript;
+    src: url('./fonts/DancingScript-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: russoone;
+    src: url('./fonts/RussoOne-Regular.ttf');
+}
+
+@font-face {
+    font-family: chackra;
+    src: url('./fonts/ChakraPetch-Bold.ttf');
+}
+
+@font-face {
+    font-family: raleway;
+    src: url('./fonts/Raleway-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: raleway-light;
+    src: url('./fonts/Raleway-Light.ttf');
+}
